@@ -1,0 +1,230 @@
+{
+  "name": "material-icon-theme",
+  "displayName": "Material Icon Theme",
+  "description": "Material Design Icons for Visual Studio Code",
+  "version": "4.5.0",
+  "publisher": "PKief",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+  },
+  "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension",
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "material-icon-theme",
+        "label": "Material Icon Theme",
+        "path": "./dist/material-icons.json",
+        "_watch": true
+      }
+    ],
+    "commands": [
+      {
+        "command": "material-icon-theme.activateIcons",
+        "title": "%command.activateIcons%"
+      },
+      {
+        "command": "material-icon-theme.toggleIconPacks",
+        "title": "%command.toggleIconPacks%"
+      },
+      {
+        "command": "material-icon-theme.changeFolderTheme",
+        "title": "%command.changeFolderTheme%"
+      },
+      {
+        "command": "material-icon-theme.changeFolderColor",
+        "title": "%command.changeFolderColor%"
+      },
+      {
+        "command": "material-icon-theme.restoreDefaultConfig",
+        "title": "%command.restoreDefaultConfig%"
+      },
+      {
+        "command": "material-icon-theme.toggleExplorerArrows",
+        "title": "%command.toggleExplorerArrows%"
+      },
+      {
+        "command": "material-icon-theme.changeOpacity",
+        "title": "%command.changeOpacity%"
+      },
+      {
+        "command": "material-icon-theme.toggleGrayscale",
+        "title": "%command.toggleGrayscale%"
+      },
+      {
+        "command": "material-icon-theme.changeSaturation",
+        "title": "%command.changeSaturation%"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "%configuration.title%",
+      "properties": {
+        "material-icon-theme.showWelcomeMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.showWelcomeMessage%"
+        },
+        "material-icon-theme.showUpdateMessage": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.showUpdateMessage%"
+        },
+        "material-icon-theme.showReloadMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.showReloadMessage%"
+        },
+        "material-icon-theme.activeIconPack": {
+          "type": "string",
+          "default": "angular",
+          "description": "%configuration.activeIconPack%",
+          "enumDescriptions": [
+            "%configuration.activeIconPack.angular%",
+            "%configuration.activeIconPack.angular_ngrx%",
+            "%configuration.activeIconPack.react%",
+            "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.vue%",
+            "%configuration.activeIconPack.vue_vuex%",
+            "%configuration.activeIconPack.nest%",
+            "%configuration.activeIconPack.none%"
+          ],
+          "enum": [
+            "angular",
+            "angular_ngrx",
+            "react",
+            "react_redux",
+            "vue",
+            "vue_vuex",
+            "nest",
+            "none"
+          ]
+        },
+        "material-icon-theme.files.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.files.associations%"
+        },
+        "material-icon-theme.folders.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.folders.associations%"
+        },
+        "material-icon-theme.languages.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.languages.associations%"
+        },
+        "material-icon-theme.folders.theme": {
+          "type": "string",
+          "default": "specific",
+          "description": "%configuration.folders.theme%",
+          "enumDescriptions": [
+            "%configuration.folders.theme.specific%",
+            "%configuration.folders.theme.classic%",
+            "%configuration.folders.theme.none%"
+          ],
+          "enum": [
+            "specific",
+            "classic",
+            "none"
+          ]
+        },
+        "material-icon-theme.folders.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme.opacity": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "%configuration.opacity%"
+        },
+        "material-icon-theme.hidesExplorerArrows": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.hidesExplorerArrows%"
+        },
+        "material-icon-theme.saturation": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "%configuration.saturation%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "npm run compile:dev && npm run postcompile",
+    "check": "ts-node ./src/scripts/icons/checks",
+    "compile": "webpack --mode production",
+    "compile:dev": "webpack --mode none",
+    "compile:watch": "webpack --mode none --watch",
+    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
+    "postcompile": "npm run generateJson && npm run check",
+    "preview": "ts-node ./src/scripts/preview",
+    "vscode:prepublish": "npm run lint && npm run compile"
+  },
+  "dependencies": {
+    "lodash.merge": "4.6.2",
+    "semver": "7.3.4"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.20",
+    "@types/puppeteer": "^5.4.2",
+    "@types/semver": "^7.3.4",
+    "@types/vscode": "~1.51.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "puppeteer": "^5.5.0",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.14",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.4.1",
+    "webpack": "^5.12.1",
+    "webpack-cli": "^4.3.1"
+  }
+}

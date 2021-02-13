@@ -1,0 +1,11 @@
+<svg width="300" height="300" version="1.1" viewBox="0 0 79 78" xmlns="http://www.w3.org/2000/svg">
+ <title>postcss-logo-symbol</title>
+ <g transform="matrix(.9508 0 0 .9508 1.9436 1.919)">
+  <g style="stroke:#e53935">
+   <path d="m71.285 39a31.785 31.785 0 0 1-31.785 31.785 31.785 31.785 0 0 1-31.785-31.785 31.785 31.785 0 0 1 31.785-31.785 31.785 31.785 0 0 1 31.785 31.785" style="fill-opacity:0;paint-order:fill markers stroke;stroke-linecap:square;stroke-width:4.172;stroke:#e53935"/>
+   <path d="m70.177 53.23h-61.355l30.677-44.285z" style="fill-opacity:0;paint-order:fill markers stroke;stroke-linecap:square;stroke-width:4.2421;stroke:#e53935"/>
+   <path d="m27.636 27.007h25.962v25.962h-25.962z" style="fill-opacity:0;paint-order:fill markers stroke;stroke-linecap:square;stroke-width:3.5945;stroke:#e53935"/>
+   <path d="m51.61 39.43a10.993 10.993 0 0 1-10.993 10.993 10.993 10.993 0 0 1-10.993-10.993 10.993 10.993 0 0 1 10.993-10.993 10.993 10.993 0 0 1 10.993 10.993" style="fill-opacity:0;paint-order:fill markers stroke;stroke-linecap:square;stroke-width:3.3719;stroke:#e53935"/>
+  </g>
+ </g>
+</svg>
