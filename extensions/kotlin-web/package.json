@@ -10,7 +10,7 @@
 		"watch": "echo done"
 	},
 	"engines": {
-		"vscode": "^1.8.0"
+		"vscode": "^1.53.2"
 	},
 	"icon": "artwork/icon.png",
 	"categories": [

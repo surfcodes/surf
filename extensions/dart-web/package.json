@@ -5,7 +5,7 @@
 	"version": "3.20.0-dev",
 	"publisher": "Dart-Code",
 	"engines": {
-		"vscode": "^1.52.0"
+		"vscode": "^1.53.2"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"bugs": {

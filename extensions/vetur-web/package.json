@@ -24,8 +24,8 @@
     "Programming Languages"
   ],
   "engines": {
-    "vscode": "^1.52.0"
-  },
+		"vscode": "^1.53.2"
+	},
   "activationEvents": [
     "onLanguage:vue"
   ],

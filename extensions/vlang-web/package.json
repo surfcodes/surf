@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"private": true,
 	"engines": {
-		"vscode": "^1.40.0"
+		"vscode": "^1.53.2"
 	},
 	"homepage": "https://vlang.io/",
 	"bugs": {

@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/ocamllabs/vscode-ocaml-platform",
   "engines": {
-    "vscode": "^1.53.0"
-  },
+		"vscode": "^1.53.2"
+	},
   "categories": [
     "Programming Languages"
   ],

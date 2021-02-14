@@ -6,8 +6,8 @@
   "publisher": "scala-lang",
   "license": "SEE LICENSE IN LICENSE.md",
   "engines": {
-    "vscode": "^1.5.0"
-  },
+		"vscode": "^1.53.2"
+	},
   "homepage": "https://github.com/scala/vscode-scala-syntax/blob/master/README.md",
   "repository": {
     "type": "git",

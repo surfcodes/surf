@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/jithurjacob/vscode-nbpreviewer/blob/master/README.md",
   "engines": {
-    "vscode": "^1.52.0"
-  },
+		"vscode": "^1.53.2"
+	},
   "browser": "./dist/extension",
   "categories": [
     "Programming Languages",

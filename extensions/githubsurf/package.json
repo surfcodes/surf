@@ -17,8 +17,8 @@
   ],
   "browser": "./dist/extension",
   "engines": {
-    "vscode": "^1.48.0"
-  },
+		"vscode": "^1.53.2"
+	},
   "contributes": {
     "viewsContainers": {
       "activitybar": [
