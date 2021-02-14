@@ -20,6 +20,9 @@
     "typescript": "^4.1.3"
   },
   "scripts": {
+    "🏄‍♂️": "yarn surf",
+    "🌊": "yarn watch",
+    "surf": "yarn serve",
     "setup": "git submodule update --init --recursive",
     "preinstall": "./scripts/pre-install.sh",
     "postinstall": "husky install && ./scripts/postinstall.sh",
