@@ -114,15 +114,17 @@ You have to modify [api.ts](https://github.com/bridgedxyz/github.surf/blob/main/
 
 [As listed here](./extensions) and [surf-code-extensions](https://github.com/bridgedxyz/surf-code-extensions) here, we support below extensions in-the-box
 
-- Vue
-- JS/TS/JSX/TSX (React, Svelete, and other js based frrameworks)
+- JS/TS/JSX/TSX (React, and other js based frrameworks)
+- Vue - [vuejs/vue/examples demo](https://github.surf/vuejs/vue/blob/HEAD/examples/)
+- Svelete - [sveltejs/realworld demo](https://github.surf/sveltejs/realworld)
+- Python - [tensorflow python demo](https://github.surf/tensorflow/tensorflow/tree/master/tensorflow/python)
+- Jupyter Notebook - [deepmind/deepmind-research demo](https://github.surf/deepmind/deepmind-research)
 - Dart & Flutter
 - Elm
 - Kotlin
 - Scala
 - Ocaml
 - Vetur
-- Jupyter Notebook - [deepmind/deepmind-research demo](https://github.surf/deepmind/deepmind-research)
 - Material theme
 
 
