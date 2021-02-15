@@ -13,6 +13,9 @@
     "onCommand:githubsurf.validate-token",
     "onCommand:githubsurf.update-token",
     "onCommand:githubsurf.clear-token",
+    "onCommand:githubsurf.get-current-authority",
+    "onCommand:githubsurf.switch-branch",
+    "onCommand:githubsurf.switch-tag",
     "onView:githubsurf"
   ],
   "browser": "./dist/extension",
@@ -52,6 +55,16 @@
       {
         "command": "githubsurf.clear-token",
         "title": "Clear Current GitHub OAuth Token",
+        "category": "githubsurf"
+      },
+      {
+        "command": "githubsurf.switch-branch",
+        "title": "Switch to Another Branch",
+        "category": "githubsurf"
+      },
+      {
+        "command": "githubsurf.switch-tag",
+        "title": "Switch to Another Tag",
         "category": "githubsurf"
       }
     ]

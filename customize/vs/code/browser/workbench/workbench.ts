@@ -18,8 +18,15 @@ import { localize } from 'vs/nls';
 import { Schemas } from 'vs/base/common/network';
 import product from 'vs/platform/product/common/product';
 import { parseLogLevel } from 'vs/platform/log/common/log';
-import { parseGitHubUrl } from 'vs/githubSurf/util';
+import { getBrowserUrl, replaceBrowserUrl } from 'vs/githubsurf/util';
 import { renderNotification } from 'vs/githubSurf/notification';
+
+// custom vs code commands defined by github.surf
+const getGitHubSurfCustomCommands: () => ({id: string, handler: (...args: any[]) => unknown }[]) = () => [
+	{ id: 'githubsurf.vscode.get-browser-url', handler: getBrowserUrl },
+	{ id: 'githubsurf.vscode.replace-browser-url', handler: replaceBrowserUrl },
+];
+
 
 function doCreateUri(path: string, queryValues: Map<string, string>): URI {
 	let query: string | undefined = undefined;
@@ -380,7 +387,7 @@ class WindowIndicator implements IWindowIndicator {
 			}
 
 			if (uri?.scheme === 'githubsurf') {
-				[repositoryOwner, repositoryName] = uri.authority.split('+');
+				[repositoryOwner = 'bridgedxyz', repositoryName = 'githubsurf'] = URI.parse(getBrowserUrl()).path.split('/').filter(Boolean);
 			}
 		}
 
@@ -399,10 +406,10 @@ class WindowIndicator implements IWindowIndicator {
 }
 
 (function () {
-	const route = parseGitHubUrl(window.location.href);
+	const [repoOwner = 'bridgedxyz', repoName = 'github.surf'] = (URI.parse(window.location.href).path || '').split('/').filter(Boolean);
 	const config: IWorkbenchConstructionOptions & { folderUri?: UriComponents, workspaceUri?: UriComponents } = {
-		folderUri: URI.from({ scheme: "githubsurf", path: '/', authority: `${route.owner}+${route.repo}+${route.branch}` }),
-		staticExtensions: [],
+		// the empty authority means githubsurf should get it from `window.location.href`
+		folderUri: URI.from({ scheme: "githubsurf", path: '/', authority: '' }),		staticExtensions: [],
 		enableSyncByDefault: false,
 		webWorkerExtensionHostIframeSrc: document.getElementById('vscode-extension-host-iframe-src')?.getAttribute('data-settings') as string,
 };
@@ -474,7 +481,7 @@ class WindowIndicator implements IWindowIndicator {
 
 	// Home Indicator
 	const homeIndicator: IHomeIndicator = {
-		href: `https://github.com/${route.owner}/${route.repo}`,
+		href: `https://github.com/${repoOwner}/${repoName}`,
 		icon: 'github',
 		title: localize('home', "Home")
 	};
@@ -524,6 +531,7 @@ class WindowIndicator implements IWindowIndicator {
 	// Finally create workbench
 	create(document.body, {
 		...config,
+		commands: getGitHubSurfCustomCommands(),
 		logLevel: logLevel ? parseLogLevel(logLevel) : undefined,
 		settingsSyncOptions,
 		homeIndicator,
