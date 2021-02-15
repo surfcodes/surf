@@ -2,15 +2,12 @@
     "name": "svelte-vscode",
     "version": "0.5.0",
     "description": "Svelte language support for VS Code",
-    "main": "dist/src/extension.js",
     "scripts": {
         "build:grammar": "npx js-yaml syntaxes/svelte.tmLanguage.src.yaml > syntaxes/svelte.tmLanguage.json",
-        "build:ts": "tsc -p ./",
         "build": "npm run build:ts && npm run build:grammar",
         "vscode:prepublish": "npm run build && npm prune --production",
-        "watch": "npm run build:grammar && tsc -w -p ./",
         "compile": "echo done",
-        "test": "echo 'NOOP'"
+        "watch": "echo done"
     },
     "repository": {
         "type": "git",

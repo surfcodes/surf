@@ -10,8 +10,8 @@ const NOTIFICATION_STORAGE_KEY = 'GITHUB_SURF_NOTIFICATION';
 const NOTIFICATION_STORAGE_VALUE = '20210212';
 
 const notification = {
-	title: 'ATTENTION: This page is NOT officially provided by GitHub.',
-	content: 'github.surf is an open source project, which is not officially provided by GitHub.',
+	title: '🙏 We Wish for no confusion!: This page is not officially provided by GitHub.',
+	content: 'github.surf has no relations to github as a corporation, it\'s an open source project, which is to provide best code surfing experience on the web.',
 	link: 'https://github.com/bridgedxyz/github.surf',
 };
 
