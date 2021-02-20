@@ -6,7 +6,9 @@ import { ParsedConfigurationFiles } from '@codesandbox/common/lib/templates/temp
 import _debug from '@codesandbox/common/lib/utils/debug';
 import { isBabel7 } from '@codesandbox/common/lib/utils/is-babel-7';
 import { absolute } from '@codesandbox/common/lib/utils/path';
-import VERSION from '@codesandbox/common/lib/version';
+
+// SURF OVERRIDE
+// import VERSION from '@codesandbox/common/lib/version';
 import { clearErrorTransformers, dispatch, reattach } from 'codesandbox-api';
 import { flatten } from 'lodash';
 import initializeErrorTransformers from 'sandbox-hooks/errors/transformers';
@@ -838,7 +840,7 @@ async function compile({
           sandboxId,
           cacheUsed: usedCache,
           browser: navigator.userAgent,
-          version: VERSION,
+          version: 'surf-override.0.0.0',
         })
         .catch(() => {
           /* Do nothing with the error */

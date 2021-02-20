@@ -10,7 +10,9 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { normalizeName } = require('webpack/lib/optimize/SplitChunksPlugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const VERSION = require('@codesandbox/common/lib/version').default;
+// SURF OVERRIDE
+// const VERSION = require('@codesandbox/common/lib/version').default;
+
 // const childProcess = require('child_process');
 const commonConfig = require('./webpack.common');
 
@@ -111,7 +113,7 @@ module.exports = merge(commonConfig, {
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
       }),
-    new webpack.DefinePlugin({ VERSION: JSON.stringify(VERSION) }),
+    new webpack.DefinePlugin({ VERSION: JSON.stringify('surf-override.0.0.0') }),
     // Generate a service worker script that will precache, and keep up to date,
     // the HTML & assets that are part of the Webpack build.
     new SWPrecacheWebpackPlugin({

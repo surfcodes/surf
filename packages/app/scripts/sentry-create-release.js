@@ -1,6 +1,9 @@
 /* eslint-disable no-console */
 const childProcess = require('child_process');
-const VERSION = require('@codesandbox/common/lib/version').default;
+
+// SURF OVERRIDE
+// const VERSION = require('@codesandbox/common/lib/version').default;
+const VERSION = 'surf-override.0.0.0'
 
 const COMMIT_HASH = childProcess
   .execSync('git rev-parse HEAD')

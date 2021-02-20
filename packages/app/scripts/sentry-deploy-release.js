@@ -1,5 +1,8 @@
 const childProcess = require('child_process');
-const VERSION = require('@codesandbox/common/lib/version').default;
+
+// SURF OVERRIDE
+// const VERSION = require('@codesandbox/common/lib/version').default;
+const VERSION = 'surf-override.0.0.0'
 
 console.log('Marking this release as deployed in Sentry');
 try {
