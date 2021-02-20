@@ -81,7 +81,8 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
-    "opencollective": "^1.0.3"
+    "opencollective": "^1.0.3",
+    "lerna": "^3.16.4"
   },
   "devDependencies": {
     "all-contributors-cli": "^6.9.2",
@@ -99,7 +100,6 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "gulp": "^3.9.1",
     "husky": "^4.3.0",
-    "lerna": "^3.16.4",
     "lint-staged": "^9.2.5",
     "overmind-devtools": "^26.0.2",
     "prettier": "2.1.1",
