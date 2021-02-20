@@ -1,0 +1,5 @@
+**/cra-files/*.*
+**/eslint-lint.js
+**/stories/*.*
+**/lib/*.*
+**/*.d.ts

@@ -1,0 +1,134 @@
+<style>
+  body {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    background: #151515;
+    cursor: pointer;
+    -webkit-font-smoothing: auto;
+    -moz-font-smoothing: auto;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+    font-smooth: always;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .text {
+    margin-top: 24rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 600px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .cube,
+  .cube * {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+  }
+  .cube .sides * {
+    opacity: 0.1;
+    box-sizing: border-box;
+    border: 0.12rem solid white;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .sides {
+    transform-style: preserve-3d;
+    transform: rotateX(-37.5deg) rotateY(45deg);
+  }
+
+  .cube .sides .top {
+    transform: rotateX(90deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+
+  .cube .sides .bottom {
+    transform: rotateX(-90deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+
+  .cube .sides .front {
+    transform: rotateY(0deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+
+  .cube .sides .back {
+    transform: rotateY(-180deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+  .cube .sides .left {
+    transform: rotateY(-90deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+
+  .cube .sides .right {
+    transform: rotateY(90deg) translateZ(48px);
+    transform-origin: 50% 50%;
+  }
+
+  .play {
+    position: absolute;
+    background-color: white;
+    text-align: left;
+  }
+  .play:before,
+  .play:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+  }
+  .play,
+  .play:before,
+  .play:after {
+    width: 1rem;
+    height: 1rem;
+    border-top-right-radius: 30%;
+  }
+
+  .play {
+    transform: rotate(-90deg) skewX(-30deg) scale(1, 0.866);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.24);
+  }
+  .play:before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707)
+      translate(0, -50%);
+  }
+  .play:after {
+    transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+  }
+</style>
+<div class="container">
+  <div class="cube">
+    <div class="sides">
+      <div class="top"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+      <div class="left"></div>
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+  </div>
+  <div class="play"></div>
+  <div class="text">
+    <h1>Aw, Snap?</h1>
+    <p style="color:rgba(255,255,255,0.9)">
+      We noticed that the sandbox didn't complete its last run. This could be
+      because of some code that crashed the browser. We paused execution so you
+      can check the code.
+    </p>
+    <p style="color:rgba(255,255,255,0.9)">Click to continue execution</p>
+  </div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">

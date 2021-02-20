@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs",
+		"outDir": "out",
+		"noImplicitAny": true,
+		"sourceMap": true,
+		"declaration": true,
+		"lib": [
+			"es5",
+			"es2015.promise",
+			"dom"
+    ],
+    "types": ["mocha", "node"]
+	},
+	"exclude": [
+		"node_modules",
+		"release",
+		"out",
+		"test-cases"
+	]
+}

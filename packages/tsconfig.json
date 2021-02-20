@@ -1,0 +1,18 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES6",
+    "lib": [
+      "esnext.asynciterable",
+      "es6",
+      "dom",
+      "es2017.object",
+      "es2017.sharedmemory"
+    ],
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": false
+  }
+}

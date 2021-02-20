@@ -1,0 +1,6 @@
+{
+  "ignoredFiles": [
+    "*.svg",
+    "**/__image_snapshots__/**"
+  ]
+}

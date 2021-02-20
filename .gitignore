@@ -6,6 +6,9 @@ chrome-extension.pem
 chrome-extension.crx
 chrome-extension.zip
 
+# we use yarn
+package-lock.json
+
 # Logs
 logs
 *.log
@@ -32,6 +35,7 @@ coverage
 
 # nyc test coverage
 .nyc_output
+
 
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -122,3 +126,28 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# code sandbox
+
+# testing
+coverage
+
+# production
+build
+www
+.deliver
+
+# misc
+.DS_Store
+npm-debug.log
+yarn-error.log
+.idea
+jest
+stats.json
+
+lerna-debug.log
+
+standalone-packages/monaco-editor-core
+
+.next
+.cache-loader

@@ -1,0 +1,14 @@
+{
+  "name": "vscode-extensions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf out",
+    "copy": "yarn clean && mkdir out && cp -R ../vscode/extensions-bundle/ ./out/ && yarn rimraf out/draft",
+    "compile": "cd out/extensions/ && node ../../../codesandbox-browserfs/build/scripts/make_http_index.js > index.json"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.3"
+  }
+}

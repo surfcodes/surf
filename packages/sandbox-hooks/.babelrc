@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "modules": false, "useBuiltIns": "usage" }],
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}
