@@ -1,4 +1,4 @@
-const env = require('@codesandbox/common/lib/config/env');
+const env = require('@codesandbox/common/lib/config/env.js');
 const slugify = require('@sindresorhus/slugify');
 const { createFilePath } = require('gatsby-source-filesystem');
 const noop = require('lodash/noop');
