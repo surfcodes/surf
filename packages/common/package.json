@@ -6,6 +6,7 @@
     "url": "https://github.com/codesandbox/codesandbox-client",
     "directory": "packages/common"
   },
+  "main": "lib",
   "files": [
     "lib"
   ],
