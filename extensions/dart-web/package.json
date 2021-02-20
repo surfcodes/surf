@@ -31,8 +31,27 @@
 	],
 	"icon": "media/dart.png",
 	"activationEvents": [
-		"onLanguage:dart"
+		"onLanguage:dart",
+        "onCommand:dart.showPreview"
 	],
+	"commands": [
+		{
+			"command": "dart.showPreview",
+			"title": "Show preview",
+			"category": "Dart"
+		}
+	],
+	"menus": {
+		"editor/title": [
+			{
+				"command": "dart.showPreview",
+				"when": "editorLangId == jupyter",
+				"group": "navigation"
+			}
+		]
+	},
+	"main": "./src/extension",
+    "browser": "./dist/extension",
 	"contributes": {
 		"languages": [
 			{
@@ -90,7 +109,9 @@
 		}
 	},
 	"scripts": {
-		"compile": "echo done",
-		"watch": "echo done"
+		"clean": "rm -rf dist out",
+        "build": "webpack --config extension.webpack.config.js --mode production",
+        "compile": "webpack --config extension.webpack.config.js --mode production",
+        "dev": "webpack --config extension.webpack.config.js --watch"
 	}
 }
